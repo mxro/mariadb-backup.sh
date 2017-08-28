@@ -24,13 +24,13 @@
 #
 
 ## set default variables
-backup_root=/srv/backups/mariadb	# root directory for all backups
+backup_root=/var/lib/mysql/dumps	# root directory for all backups
 v=true					# verbose output
-keep=7					# number of old backups to keep
+keep=24					# number of old backups to keep
 hash=sha256				# crypto hash to use for checksums
 
 # set mysqldump options
-dumpopts='--single-transaction --flush-logs --flush-privileges'
+dumpopts='-u [mysqluser] -p[mysqlpass]'
 
 ## don't edit below this line
 
