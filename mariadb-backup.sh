@@ -64,7 +64,7 @@ $v && printf 'Backup location: %s\n' $backup_dir
 
 # get a list of databases to backup (strip out garbage and internal databases)
 _get_db_list () {
-  mysqlshow | \
+  mysqlshow $dumpopts | \
     sed -r '/Databases|information_schema|performance_schema/d' | \
     awk '{ print $2 }'
 }
